@@ -8,7 +8,13 @@
  */
 function mapPromise(promise, transformer){
   return new Promise((resolve, reject) => {
-    /* IMPLEMENT ME!! */
+    
+    promise.then( (result) => {
+      const value = transformer(result);
+
+      value ? resolve(value) : reject(value);
+    }).catch( (error) => reject(error) )
+
   });
 }
 
