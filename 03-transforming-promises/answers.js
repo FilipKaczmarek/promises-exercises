@@ -27,7 +27,21 @@ function mapPromise(promise, transformer){
  */
 function squarePromise(numberPromise){
   return numberPromise
-    .then(/* IMPLEMENT ME! */);
+    .then( (value) => {
+      if (typeof value === 'string'){
+        let numeric = Number(value);
+
+        if(isNaN(numeric)){
+          throw `Cannot convert '${value}' to a number!`;
+        }
+
+      return numeric * numeric
+      }
+      if (typeof value === 'number'){
+        return value * value
+      }
+
+    } );
 }
 
 /**
