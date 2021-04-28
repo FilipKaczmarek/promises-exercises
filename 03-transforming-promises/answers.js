@@ -52,7 +52,7 @@ function squarePromise(numberPromise){
  */
 function squarePromiseOrZero(promise){
   return squarePromise(promise)
-    .catch(/* IMPLEMENT ME! */);
+    .catch( () => 0);
 }
 
 /**
@@ -62,7 +62,7 @@ function squarePromiseOrZero(promise){
  * @returns {Promise}
  */
 function switcheroo(promise){
-  return promise.then(/* IMPLEMENT ME */);
+  return promise.then((resolve) => {throw resolve}, (reject) => {return reject});
 }
 
 /**
